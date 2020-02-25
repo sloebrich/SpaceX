@@ -2,7 +2,6 @@
 import React from "react";
 import ImageCarousel from "./Carousel";
 import {Card, Row, Col, Table} from 'react-bootstrap';
-import { LinkContainer } from "react-router-bootstrap";
 
 function DetailCard(props){
 
