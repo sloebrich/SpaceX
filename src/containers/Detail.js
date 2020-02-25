@@ -9,6 +9,7 @@ import Loading from "../components/Loading";
 function Detail(){
 
   const flightNumber = useParams().flightNumber;
+
   const [launch, setLaunch] = useState({});
   const [fetched, setFetched] = useState(false);
 
@@ -29,7 +30,7 @@ function Detail(){
 if(fetched){
   return (<div className="detail-container">
               <DetailCard entry={launch}/>
-              <DetailFooter prev={(Number(flightNumber)-1)} next={(Number(flightNumber)+1)}/>
+              <DetailFooter entry={Number(flightNumber)}/>
             </div>)
         } else { return <Loading/>}
 }

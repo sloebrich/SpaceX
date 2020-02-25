@@ -48,12 +48,8 @@ function DetailCard(props){
 {launch.details}
  </Card.Text>
  <div style={{textAlign: "center"}}>
- <LinkContainer to={article}>
- <Card.Link style={{float:"left"}}>Article</Card.Link>
- </LinkContainer>
- <LinkContainer to={video}>
-  <Card.Link style={{float:"right"}}>Video</Card.Link>
-  </LinkContainer>
+ <Card.Link href={article}>Article</Card.Link>
+<Card.Link href={video}>Video</Card.Link>
 </div>
 </Card.Body>
  </Card>

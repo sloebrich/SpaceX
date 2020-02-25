@@ -1,7 +1,7 @@
 // jshint esversion:6
 import React from 'react';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -16,10 +16,13 @@ function App() {
 
   return (
     <div className="App">
-    <Router basename="/">
+    <Router>
     <Header />
+    <Switch>
   <Route path="/" exact component={Dashboard}/>
   <Route path="/:flightNumber" component={Detail}/>
+  <Route component={NotFound}/>
+  </Switch>
   <Footer />
   </Router>
   </div>

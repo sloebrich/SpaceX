@@ -19,7 +19,7 @@ function LaunchCard(props){
     <ListGroupItem >Rocket: {launch.rocket.rocket_name}, type {launch.rocket.rocket_type}</ListGroupItem>
   </ListGroup>
   <Card.Body className="card-footer-body">
-  <LinkContainer to={"/#/"+launch.flight_number}>
+  <LinkContainer to={"/"+launch.flight_number}>
     <Card.Link className="card-footer-link">See details</Card.Link>
     </LinkContainer>
   </Card.Body>

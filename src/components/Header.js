@@ -5,7 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 
 function Header(){
-  var rd = (Math.floor(90*Math.random())+1)
+  var randomEntry = (Math.floor(90*Math.random())+1)
   return <Navbar bg="dark" variant="dark">
     <Nav className="mr-auto">
     <LinkContainer to="/">
@@ -17,6 +17,7 @@ function Header(){
       <LinkContainer to="/55">
       <Nav.Link>Tesla</Nav.Link>
       </LinkContainer>
+       <Nav.Link href={"/"+ randomEntry}>Random</Nav.Link>
       </Nav>
   </Navbar>
 }
