@@ -20,8 +20,8 @@ function App() {
     <Router>
     <div>
   <Switch>
-  <Route exact path="/" component={Dashboard}/>
-  <Route path="/:flightNumber">
+  <Route exact path="/spacex" component={Dashboard}/>
+  <Route path="/spacex/:flightNumber">
     <Detail />
   </Route>
   <Route component={NotFound} />
