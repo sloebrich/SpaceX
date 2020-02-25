@@ -1,14 +1,19 @@
 // jshint esversion:6
 import React from "react";
-import {Nav} from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
 
 function DetailFooter(props){
 return <Nav className="justify-content-center">
     <Nav.Item>
-      <Nav.Link href={"/spacex/"+props.prev} className="detail-footer-link">Previous</Nav.Link>
+    <LinkContainer to={"/"+props.prev}>
+      <Nav.Link className="detail-footer-link">Previous</Nav.Link>
+      </LinkContainer>
     </Nav.Item>
     <Nav.Item>
-      <Nav.Link href={"/spacex/"+props.next} className="detail-footer-link">Next</Nav.Link>
+    <LinkContainer to={"/"+props.next}>
+      <Nav.Link className="detail-footer-link">Next</Nav.Link>
+      </LinkContainer>
     </Nav.Item>
   </Nav>
 }

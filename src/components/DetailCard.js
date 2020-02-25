@@ -2,6 +2,7 @@
 import React from "react";
 import ImageCarousel from "./Carousel";
 import {Card, Row, Col, Table} from 'react-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
 
 function DetailCard(props){
 
@@ -44,13 +45,16 @@ function DetailCard(props){
  </Table>
    <Card.Body>
  <Card.Text>
- <p>{launch.details}</p>
- <div>
- <Card.Link style={{float:"left"}} href={article}>Article</Card.Link>
-  <Card.Link style={{float:"right"}} href={video}>Video</Card.Link>
-</div>
+{launch.details}
  </Card.Text>
-
+ <div style={{textAlign: "center"}}>
+ <LinkContainer to={article}>
+ <Card.Link style={{float:"left"}}>Article</Card.Link>
+ </LinkContainer>
+ <LinkContainer to={video}>
+  <Card.Link style={{float:"right"}}>Video</Card.Link>
+  </LinkContainer>
+</div>
 </Card.Body>
  </Card>
  </Col>

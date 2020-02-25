@@ -1,13 +1,13 @@
 // jshint esversion:6
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 import './App.css';
-import Dashboard from "./components/Dashboard";
-import Detail from "./components/Detail";
+import Dashboard from "./containers/Dashboard";
+import Detail from "./containers/Detail";
 import NotFound from "./components/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -15,20 +15,13 @@ import Footer from "./components/Footer";
 function App() {
 
   return (
-    <div>
+    <div className="App">
+    <Router basename="/">
     <Header />
-    <Router>
-    <div>
-  <Switch>
-  <Route exact path="/spacex" component={Dashboard}/>
-  <Route path="/spacex/:flightNumber">
-    <Detail />
-  </Route>
-  <Route component={NotFound} />
-  </Switch>
-  </div>
-  </Router>
+  <Route path="/" exact component={Dashboard}/>
+  <Route path="/:flightNumber" component={Detail}/>
   <Footer />
+  </Router>
   </div>
 );
 }

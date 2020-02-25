@@ -1,17 +1,28 @@
 // jshint esversion:6
 import React from "react";
 import {Navbar, Nav} from 'react-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
+
 
 function Header(){
+  var rd = (Math.floor(90*Math.random())+1)
   return <Navbar bg="dark" variant="dark">
     <Nav className="mr-auto">
-      <Nav.Link href="/spacex">Home</Nav.Link>
-      <Nav.Link href="/spacex/90">Latest</Nav.Link>
-      <Nav.Link href="/spacex/55">Tesla</Nav.Link>
-      <Nav.Link href={"/spacex/"+ (Math.floor(90*Math.random())+1)}>Random</Nav.Link>
+    <LinkContainer to="/">
+      <Nav.Link href="/">Home</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to="/90">
+      <Nav.Link>Latest</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to="/55">
+      <Nav.Link>Tesla</Nav.Link>
+      </LinkContainer>
       </Nav>
   </Navbar>
 }
 
 export default Header
       // <Nav.Link href="/upcoming">Upcoming</Nav.Link>
+      // <LinkContainer to={"/"+ rd} replace>
+       // <Nav.Link href={"/"+ rd}>Random</Nav.Link>
+       // </LinkContainer>

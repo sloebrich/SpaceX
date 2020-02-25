@@ -2,9 +2,9 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import axios from "axios";
-import DetailCard from "./DetailCard";
-import DetailFooter from "./DetailFooter";
-import Loading from "./Loading";
+import DetailCard from "../components/DetailCard";
+import DetailFooter from "../components/DetailFooter";
+import Loading from "../components/Loading";
 
 function Detail(){
 
