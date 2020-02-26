@@ -10,20 +10,18 @@ import Dashboard from "./containers/Dashboard";
 import Detail from "./containers/Detail";
 import NotFound from "./components/NotFound";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 function App() {
 
   return (
     <div className="App">
-    <Router>
+    <Router basename="/spacex">
     <Header />
     <Switch>
   <Route path="/" exact component={Dashboard}/>
   <Route path="/:flightNumber" component={Detail}/>
   <Route component={NotFound}/>
   </Switch>
-  <Footer />
   </Router>
   </div>
 );
