@@ -2,7 +2,9 @@
 import React from "react";
 
 function Footer(){
-return null
+return <footer>
+2020, Steffen Löbrich
+</footer>
 }
 
 export default Footer

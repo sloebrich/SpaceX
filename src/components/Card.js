@@ -1,6 +1,7 @@
 // jshint esversion:6
 import React from "react";
 import {Card, ListGroup, ListGroupItem, Col} from 'react-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
 
 function LaunchCard(props){
   const launch = props.data;
@@ -18,7 +19,9 @@ function LaunchCard(props){
     <ListGroupItem >Rocket: {launch.rocket.rocket_name}, type {launch.rocket.rocket_type}</ListGroupItem>
   </ListGroup>
   <Card.Body className="card-footer-body">
-    <Card.Link className="card-footer-link" href={"/"+launch.flight_number}>See details</Card.Link>
+  <LinkContainer to={"/"+launch.flight_number}>
+    <Card.Link className="card-footer-link">See details</Card.Link>
+    </LinkContainer>
   </Card.Body>
 
 </Card>

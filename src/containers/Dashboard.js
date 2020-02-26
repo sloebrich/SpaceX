@@ -1,9 +1,9 @@
 // jshint esversion:6
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import LaunchCard from "./Card";
-import Loading from "./Loading";
-import {Row} from 'react-bootstrap';
+import LaunchCard from "../components/Card";
+import Loading from "../components/Loading";
+import { Row } from 'react-bootstrap';
 
 
 function Dashboard() {

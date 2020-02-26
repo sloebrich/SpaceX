@@ -2,13 +2,14 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import axios from "axios";
-import DetailCard from "./DetailCard";
-import DetailFooter from "./DetailFooter";
-import Loading from "./Loading";
+import DetailCard from "../components/DetailCard";
+import DetailFooter from "../components/DetailFooter";
+import Loading from "../components/Loading";
 
 function Detail(){
 
   const flightNumber = useParams().flightNumber;
+
   const [launch, setLaunch] = useState({});
   const [fetched, setFetched] = useState(false);
 
@@ -29,7 +30,7 @@ function Detail(){
 if(fetched){
   return (<div className="detail-container">
               <DetailCard entry={launch}/>
-              <DetailFooter prev={(Number(flightNumber)-1)} next={(Number(flightNumber)+1)}/>
+              <DetailFooter entry={Number(flightNumber)}/>
             </div>)
         } else { return <Loading/>}
 }

@@ -44,13 +44,12 @@ function DetailCard(props){
  </Table>
    <Card.Body>
  <Card.Text>
- <p>{launch.details}</p>
- <div>
- <Card.Link style={{float:"left"}} href={article}>Article</Card.Link>
-  <Card.Link style={{float:"right"}} href={video}>Video</Card.Link>
-</div>
+{launch.details}
  </Card.Text>
-
+ <div style={{textAlign: "center"}}>
+ <Card.Link href={article}>Article</Card.Link>
+<Card.Link href={video}>Video</Card.Link>
+</div>
 </Card.Body>
  </Card>
  </Col>
