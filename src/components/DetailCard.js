@@ -9,6 +9,7 @@ function DetailCard(props){
   const article = launch.links.article_link;
   const video = launch.links.video_link;
   const images = launch.links.flickr_images;
+  const date = /(\d+)-(\d+)-(\d+)/.exec(launch.launch_date_utc);
 
 if(images.length > 0){
  return (<Row>
@@ -21,7 +22,7 @@ if(images.length > 0){
  <tbody>
  <tr>
  <td style={{textAlign: "right", width: "25%"}}>Launch date: </td>
- <td>{launch.launch_date_utc.substring(9,10)}/{launch.launch_date_utc.substring(6,7)}/{launch.launch_date_utc.substring(0,4)}</td>
+ <td>{date[3]}/{date[2]}/{date[1]}</td>
  </tr>
  <tr>
  <td style={{textAlign: "right"}}>Launch site: </td>
