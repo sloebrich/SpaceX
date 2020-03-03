@@ -4,14 +4,14 @@ import {Navbar, Nav} from 'react-bootstrap';
 import { LinkContainer } from "react-router-bootstrap";
 
 
-function Header(){
-  const [randomEntry, setRandomEntry] = useState(Math.floor(90*Math.random())+1);
+function Header(props){
+  const [randomEntry, setRandomEntry] = useState(Math.floor(Number(props.latest)*Math.random())+1);
   return <Navbar bg="dark" variant="dark">
     <Nav className="mr-auto">
     <LinkContainer to="/">
       <Nav.Link href="/" active="false">Home</Nav.Link>
       </LinkContainer>
-      <LinkContainer to="/90">
+      <LinkContainer to={"/"+props.latest}>
       <Nav.Link>Latest</Nav.Link>
       </LinkContainer>
       <LinkContainer to="/55">

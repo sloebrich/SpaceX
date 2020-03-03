@@ -5,10 +5,12 @@ import axios from "axios";
 import DetailCard from "../components/DetailCard";
 import DetailFooter from "../components/DetailFooter";
 import Loading from "../components/Loading";
+import NotFound from "../components/NotFound";
 
-function Detail(){
+function Detail(props){
 
   const flightNumber = useParams().flightNumber;
+
 
   const [launch, setLaunch] = useState({});
   const [fetched, setFetched] = useState(false);
@@ -27,12 +29,17 @@ function Detail(){
         setFetched(true);
        });
  }, [flightNumber, fetched]);
-if(fetched){
+
+if(0<flightNumber && flightNumber<=props.latest){
+  if(fetched){
   return (<div className="detail-container">
               <DetailCard entry={launch}/>
               <DetailFooter entry={Number(flightNumber)}/>
             </div>)
         } else { return <Loading/>}
+} else {
+  return <NotFound/>
+}
 }
 
 export default Detail;
