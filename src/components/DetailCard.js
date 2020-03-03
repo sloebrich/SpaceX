@@ -70,7 +70,7 @@ if(images.length > 0){
 <tbody>
 <tr>
 <td style={{textAlign: "right", width: "25%"}}>Launch date: </td>
-<td>{launch.launch_date_utc.substring(9,10)}/{launch.launch_date_utc.substring(6,7)}/{launch.launch_date_utc.substring(0,4)}</td>
+<td>{launch.launch_date_utc.substring(8,10)}/{launch.launch_date_utc.substring(5,7)}/{launch.launch_date_utc.substring(0,4)}</td>
 </tr>
 <tr>
 <td style={{textAlign: "right"}}>Launch site: </td>
@@ -86,9 +86,11 @@ if(images.length > 0){
 </tr>
 <tr>
 <td style={{textAlign: "right"}}>Success: </td>
-<td>{launch.launch_success ?
+<td>
+{launch.launch_success ?
   <div style={{color:"#5cb85c"}}>Launch was successful.</div>:
-  <div style={{color:"#d9534f"}}>Launch failed.</div>}</td>
+  <div style={{color:"#d9534f"}}>Launch failed.</div>}
+</td>
 </tr>
 </tbody>
 </Table>
