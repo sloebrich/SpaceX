@@ -1,7 +1,7 @@
 // jshint esversion:6
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import LaunchCard from "../components/Card";
+import LaunchCard from "../components/LaunchCard";
 import Loading from "../components/Loading";
 import { Row } from 'react-bootstrap';
 
