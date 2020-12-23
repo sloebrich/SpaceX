@@ -30,7 +30,7 @@ function App() {
          setLatest(response.data.flight_number);
         setFetched(true);
        });
- }, [fetched]);
+ }, [fetched, latest]);
 
   return (
     <div className="App">
@@ -38,7 +38,7 @@ function App() {
     <Header latest={latest}/>
     <Switch>
       <Route path="/" exact component={Dashboard}/>
-      <Route path="spacex/:flightNumber" >
+      <Route path="/:flightNumber" >
         <Detail latest={latest}/>
       </Route>
       <Route component={NotFound}/>

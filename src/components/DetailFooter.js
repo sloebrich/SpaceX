@@ -10,12 +10,12 @@ function DetailFooter(props){
 return <Nav className="justify-content-center">
     {entry!==props.latest && (<Nav.Item>
     <LinkContainer to={"/"+next}>
-      <Nav.Link className="detail-footer-link"><span aria-hidden="true" class="carousel-control-prev-icon"></span></Nav.Link>
+      <Nav.Link className="detail-footer-link"><span aria-hidden="true" className="carousel-control-prev-icon"></span></Nav.Link>
       </LinkContainer>
     </Nav.Item>)}
     {entry!==1 && (<Nav.Item>
     <LinkContainer to={"/"+prev}>
-      <Nav.Link className="detail-footer-link"><span aria-hidden="true" class="carousel-control-next-icon"></span></Nav.Link>
+      <Nav.Link className="detail-footer-link"><span aria-hidden="true" className="carousel-control-next-icon"></span></Nav.Link>
       </LinkContainer>
     </Nav.Item>)}
   </Nav>

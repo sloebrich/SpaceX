@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel';
 function ImageCarousel(props){
 
 return (<Carousel className="image-carousel">
-  {props.images.map(image => <Carousel.Item>
+  {props.images.map(image => <Carousel.Item key={image}>
     <img
       className="d-block w-100 carousel-image"
       src={image}
