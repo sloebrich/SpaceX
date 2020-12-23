@@ -8,14 +8,14 @@ function DetailFooter(props){
   const prev = entry -1;
   const next = entry +1;
 return <Nav className="justify-content-center">
-    {entry!==1 && (<Nav.Item>
-    <LinkContainer to={"/"+prev}>
-      <Nav.Link className="detail-footer-link">Previous</Nav.Link>
+    {entry!==props.latest && (<Nav.Item>
+    <LinkContainer to={"/"+next}>
+      <Nav.Link className="detail-footer-link"><span aria-hidden="true" class="carousel-control-prev-icon"></span></Nav.Link>
       </LinkContainer>
     </Nav.Item>)}
-    {entry!==90 && (<Nav.Item>
-    <LinkContainer to={"/"+next}>
-      <Nav.Link className="detail-footer-link">Next</Nav.Link>
+    {entry!==1 && (<Nav.Item>
+    <LinkContainer to={"/"+prev}>
+      <Nav.Link className="detail-footer-link"><span aria-hidden="true" class="carousel-control-next-icon"></span></Nav.Link>
       </LinkContainer>
     </Nav.Item>)}
   </Nav>

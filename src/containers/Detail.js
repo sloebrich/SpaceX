@@ -34,7 +34,7 @@ if(0<flightNumber && flightNumber<=props.latest){
   if(fetched){
   return (<div className="detail-container">
               <DetailCard entry={launch}/>
-              <DetailFooter entry={Number(flightNumber)}/>
+              <DetailFooter entry={Number(flightNumber)} latest={props.latest}/>
             </div>)
         } else { return <Loading/>}
 } else {

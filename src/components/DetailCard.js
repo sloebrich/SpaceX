@@ -49,8 +49,8 @@ if(images.length > 0){
 {launch.details}
  </Card.Text>
  <div style={{textAlign: "center"}}>
- <Card.Link href={article}>Article</Card.Link>
-<Card.Link href={video}>Video</Card.Link>
+ <Card.Link href={article} target="_blank">Go to article</Card.Link>
+<Card.Link href={video} target="_blank">Go to video</Card.Link>
 </div>
 </Card.Body>
  </Card>
@@ -100,8 +100,8 @@ if(images.length > 0){
 {launch.details}
 </Card.Text>
 <div style={{textAlign: "center"}}>
-<Card.Link href={article}>Article</Card.Link>
-<Card.Link href={video}>Video</Card.Link>
+{article && <Card.Link href={article} target="_blank">Go to article</Card.Link>}
+{video && <Card.Link href={video} target="_blank">Go to video</Card.Link>}
 </div>
 </Card.Body>
 </Card>
