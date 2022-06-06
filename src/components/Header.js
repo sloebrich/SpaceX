@@ -8,16 +8,16 @@ function Header(props){
   const [randomEntry, setRandomEntry] = useState(Math.floor(Number(props.latest)*Math.random())+1);
   return <Navbar bg="dark" variant="dark">
     <Nav className="mr-auto">
-    <LinkContainer to="/">
-      <Nav.Link href="/" active="false">Home</Nav.Link>
+    <LinkContainer to="/spacex">
+      <Nav.Link active="false">Home</Nav.Link>
       </LinkContainer>
-      <LinkContainer to={"/"+props.latest}>
+      <LinkContainer to={"/spacex/"+props.latest}>
       <Nav.Link>Latest</Nav.Link>
       </LinkContainer>
-      <LinkContainer to="/55">
+      <LinkContainer to="/spacex/55">
       <Nav.Link>Tesla</Nav.Link>
       </LinkContainer>
-      <LinkContainer to={"/"+ randomEntry} onClick={()=> setRandomEntry(Math.floor(90*Math.random())+1)}>
+      <LinkContainer to={"/spacex/"+ randomEntry} onClick={()=> setRandomEntry(Math.floor(90*Math.random())+1)}>
        <Nav.Link >Random</Nav.Link>
        </LinkContainer>
       </Nav>

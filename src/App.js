@@ -16,16 +16,16 @@ function App() {
 
   return (
     <div className="App">
-    <Router basename="/spacex">
-    <Header latest={latest}/>
-    <Switch>
-      <Route path="/" exact component={Dashboard}/>
-      <Route path="/:flightNumber" >
-        <Detail latest={latest}/>
-      </Route>
-      <Route component={NotFound}/>
-    </Switch>
-  </Router>
+    <Router>
+      <Header latest={latest}/>
+      <Switch>
+        <Route path="/spacex" exact component={Dashboard}/>
+        <Route path="/spacex/:flightNumber" >
+          <Detail latest={latest}/>
+        </Route>
+        <Route component={NotFound}/>
+      </Switch>
+    </Router>
   </div>
 );
 }
