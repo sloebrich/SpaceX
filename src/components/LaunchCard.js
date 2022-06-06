@@ -2,6 +2,7 @@
 import React from "react";
 import {Card, ListGroup, ListGroupItem, Col} from 'react-bootstrap';
 import { LinkContainer } from "react-router-bootstrap";
+import {baseUrl} from '../Constants';
 
 function LaunchCard(props){
   const launch = props.data;
@@ -20,7 +21,7 @@ function LaunchCard(props){
     <ListGroupItem >Rocket: {launch.rocket.rocket_name}, type {launch.rocket.rocket_type}</ListGroupItem>
   </ListGroup>
   <Card.Body className="card-footer-body">
-  <LinkContainer to={"/spacex/"+launch.flight_number}>
+  <LinkContainer to={`${baseUrl}/${launch.flight_number}`}>
     <Card.Link className="card-footer-link">See details</Card.Link>
   </LinkContainer>
   </Card.Body>
