@@ -35,6 +35,14 @@ h1 {
 
 /* dashboard cards */
 
+.launch-card-container {
+  cursor: pointer;
+}
+
+.launch-card-container:hover {
+  opacity: 0.5;
+}
+
 .card {
   text-align: left;
 }
@@ -42,6 +50,7 @@ h1 {
 .dashboard-card {
   margin-top: 1.5rem;
   height: 32rem;
+  padding-bottom: 2rem;
 }
 
 .card-img-top {

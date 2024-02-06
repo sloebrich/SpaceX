@@ -1,45 +1,46 @@
 // jshint esversion:6
-import React, {useState, useEffect} from "react";
-import {useParams} from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import DetailCard from "../components/DetailCard";
 import DetailFooter from "../components/DetailFooter";
 import Loading from "../components/Loading";
 import NotFound from "../components/NotFound";
 
-function Detail(props){
+function Detail(props) {
+	const { flightNumber } = useParams();
 
-  const flightNumber = useParams().flightNumber;
+	const [launch, setLaunch] = useState({});
+	const [fetched, setFetched] = useState(false);
 
+	useEffect(() => {
+		fetch("https://api.spacexdata.com/v3/launches/" + flightNumber)
+			.then((res) => {
+				if (!res.ok) {
+					throw new Error(`API did not respond: Code ${res.status}`);
+				}
+				return res;
+			})
+			.then((res) => res.json())
+			.then((data) => {
+				setLaunch(data);
+				setFetched(true);
+			});
+	}, [flightNumber, fetched]);
 
-  const [launch, setLaunch] = useState({});
-  const [fetched, setFetched] = useState(false);
+	if (!fetched) return <Loading />;
 
-   useEffect(()=>{
-     axios('https://api.spacexdata.com/v3/launches/'+flightNumber)
-       .then(
-         function(response) {
+	if (Number(flightNumber) < 1 || Number(flightNumber) > props.latest)
+		return <NotFound />;
 
-           if (response.status !== 200) {
-             console.log('Looks like there was a problem. Status Code: ' +
-             response.status);
-           return;
-         }
-         setLaunch(response.data);
-        setFetched(true);
-       });
- }, [flightNumber, fetched]);
-
-if(0<flightNumber && flightNumber<=props.latest){
-  if(fetched){
-  return (<div className="detail-container">
-              <DetailCard entry={launch}/>
-              <DetailFooter entry={Number(flightNumber)} latest={props.latest}/>
-            </div>)
-        } else { return <Loading/>}
-} else {
-  return <NotFound/>
-}
+	return (
+		<div className="detail-container">
+			<DetailCard launch={launch} />
+			<DetailFooter
+				flightNumber={Number(flightNumber)}
+				latest={props.latest}
+			/>
+		</div>
+	);
 }
 
 export default Detail;
